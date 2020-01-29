@@ -9,7 +9,7 @@ const publishAsync = function (registry, path, callback) {
         registry: registry
     }, () => {
 
-        let tgz = path + '.tgz'
+        let tgz = path
 
         npm.commands.publish([tgz], (err, data) => {
 
@@ -61,7 +61,7 @@ function getRemainingVersions (moduleName, oldRegistry, newRegistry, oldRegistry
             if (err) {
                 return resolve(oldRegistryVersions);
             }
-        
+
             const latest = Object.keys(data)[0];
             const newRegistryVersions = data[latest].versions;
             console.log('New Registry Versions', newRegistryVersions);
