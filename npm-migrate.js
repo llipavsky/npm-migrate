@@ -24,9 +24,9 @@ module.exports = function (moduleName, oldRegistry, newRegistry, options = { deb
 
     return getVersionList(moduleName, oldRegistry, newRegistry)
         .then(curried_getTarballs)
-        .then(unpack)
-        .then(curried_updatePackage)
-        .then(pack)
+        //.then(unpack)
+        //.then(curried_updatePackage)
+        //.then(pack)
         .then(curried_publishSeries)
         .then(cleanup)
         .then((results) => {
